@@ -15,5 +15,7 @@ var newVdom = velement('div', { 'id': 'container' }, [
 ]);
 
 var patches = diff(vdom, newVdom);
+console.log("newVdom",newVdom)
 console.log(JSON.stringify(patches));
+//获取到变动后，开始遍历真实dom，从root节点开始遍历
 patch(rootnode,patches);

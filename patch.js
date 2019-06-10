@@ -22,7 +22,11 @@ patch.TEXT = TEXT;
 
 //深度优先遍历dom结构
 function dfsWalk(node, walker, patches) {
+    //这里是从真实DOM根节点开始遍历，
+    console.log("dfswalk 接受到的变动参数",JSON.stringify(patches))
     var currentPatches = patches[walker.index];
+    //walker.index=0的时候对应的是第一次div节点
+    console.log("currentPatches",walker.index,JSON.stringify(currentPatches))
     var len = node.childNodes ? node.childNodes.length : 0;
     for (var i = 0; i < len; i++) {
         var child = node.childNodes[i];
